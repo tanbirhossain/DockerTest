@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  dockerone-image:
+    build: ./DockerOne
+    ports:
+      - "8090:80"
+    environment:
+      - MyKey=From compose file-chill man
+  dockertwo-image:
+    build: ./DockerTwo
+    ports:
+      - "8091:80"
+    environment:
+      - ApiUrl=http://localhost:8090
